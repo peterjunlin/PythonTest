@@ -6,6 +6,5 @@ def string_functions():
     print("s2.capitalize() = '", s2.capitalize(), "'")
     print("s1.find('a') = '", s1.find('a'),"'")
 
-
 def practice1():
     string_functions()

@@ -1,7 +1,6 @@
 import unittest
 import practices.json1
 
-
 class TestCase1(unittest.TestCase):
     def setUp(self):
         print('\nsetup1\n')
@@ -15,7 +14,6 @@ class TestCase1(unittest.TestCase):
         print("test1")
         self.assertTrue(s1 == "[1, 2, 3]")
 
-
 class TestCase2(unittest.TestCase):
     def setUp(self):
         print('\nsetup2\n')
@@ -27,10 +25,8 @@ class TestCase2(unittest.TestCase):
         self.assertEqual(1, 1)
         print('\ntest2\n')
 
-
 def main():
     unittest.main()
-
 
 if __name__ == '__main__':
     main()

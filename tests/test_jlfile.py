@@ -1,7 +1,6 @@
 import unittest
 import jlpy.jlfile
 
-
 class TestCase1(unittest.TestCase):
     def test_count_characters(self):
         # Create a text file
@@ -17,10 +16,8 @@ class TestCase1(unittest.TestCase):
         dict1 = jlpy.jlfile.count_characters(file_path)
         self.assertTrue(dict0 == dict1)
 
-
 def main():
     unittest.main()
-
 
 if __name__ == '__main__':
     main()

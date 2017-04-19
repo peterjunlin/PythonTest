@@ -5,13 +5,11 @@ def read_and_display_text_file(filename):
         print(s)
     f.close()
 
-
 def write_text_file(filename):
     f = open(filename, 'w')
     f.write('Hello world!\n')
     f.write('How are you?\n')
     f.close()
-
 
 def practice1():
     filename = './temp/test.txt'

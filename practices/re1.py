@@ -1,6 +1,5 @@
 import re
 
-
 def practice1():
     print(">>>")
     pattern = '\w+ly'
