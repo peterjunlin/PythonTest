@@ -23,7 +23,7 @@ def show_globals():
 
 def variable_info():
     s1 = """line 1
-    line2þ
+    line2
     line3
     """
     print("\nprint(s1)")
