@@ -18,13 +18,16 @@ def multi_assignment1():
     print("d = ", d)
     print()
 
+
 def _func1():
     return 1, [2, 3]
+
 
 def key_value_assignment():
     dict1 = {"a": 1, "b": 2, "c": 3}
     for i, (k, v) in enumerate(dict1.items()):
         print("{},{},{}".format(i, k, v))
+
 
 def practice1():
     multi_assignment1()

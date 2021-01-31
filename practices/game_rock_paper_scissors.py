@@ -5,7 +5,12 @@ def play_game():
     value_names = ["rock", "paper", "scissors"]
 
     computer = randint(0, 2)
-    player = int(input("0-rock, 1-paper, 2-scissors"))
+    s = input("0-rock, 1-paper, 2-scissors")
+    if s.isnumeric():
+        player = int(s)
+    else:
+        print("Input is not valid.")
+        return;
 
     if computer == player:
         print("tie")

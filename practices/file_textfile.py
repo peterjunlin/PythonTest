@@ -1,5 +1,6 @@
 import os
 
+
 def read_and_display_text_file(filename):
     print("------ Read and display file", filename)
     with open(filename, 'r') as f:
@@ -7,6 +8,7 @@ def read_and_display_text_file(filename):
         # s = f.readlines()
         print(s)
     f.close()
+
 
 def write_text_file(filename):
     s1 = os.path.splitext(filename)[0]
@@ -18,12 +20,14 @@ def write_text_file(filename):
     f.write('How are you?\n')
     f.close()
 
+
 def file_attributes(filename):
     print("------ File attributes")
     f = open(filename, 'r')
     len1 = f.tell()
     print("File length: {0}".format(len1))
     f.close()
+
 
 def path_1(filename):
     print('------ path')
@@ -34,6 +38,7 @@ def path_1(filename):
     print('Current working directory: {0}'.format(os.curdir))
     print(os.path.split(filename))
     print(os.path.split(os.path.splitext(filename)[0])[1])
+
 
 def practice1():
     filename = './temp/test.txt'

@@ -1,7 +1,8 @@
 import mysql.connector
 
+
 def practice1():
-    from practices.config import mysql_conn
+    from config import mysql_conn
 
     # Connect with the MySQL Server
     cnx = mysql.connector.connect(user=mysql_conn['user'],
@@ -17,3 +18,4 @@ def practice1():
 
     cur.close()
     cnx.close()
+

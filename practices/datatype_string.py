@@ -1,5 +1,6 @@
 import sys
 
+
 def string_functions():
     s1 = '  abc '
     s2 = 'hello'
@@ -12,6 +13,7 @@ def string_functions():
     for i in it:
         # sys.stdout.write(i)
         print(i)
+
 
 def practice1():
     string_functions()

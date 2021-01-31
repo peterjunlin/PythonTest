@@ -7,5 +7,6 @@ def predefined_constants():
     # print(dir("zfill"))
     print("__debug__ = ", __debug__)
 
+
 def practice1():
     predefined_constants()

@@ -1,6 +1,7 @@
 import datetime
 from datetime import timedelta
 
+
 def date_1():
     print('------date-------')
     dt2 = datetime.date(2017, 5, 30)
@@ -35,15 +36,18 @@ def date_1():
     #
     print(dt1.strftime('%A %x'))
 
+
 def time_1():
     print('------time-------')
     tm1 = datetime.time(23, 0, 0)
     print(tm1)
 
+
 def datetime_1():
     print('------datetime-------')
     dt1 = datetime.datetime(2017, 5, 29, 23, 0, 0)
     print(dt1)
+
 
 def timedelta_1():
     print('------timedelta-------')
@@ -60,6 +64,7 @@ def timedelta_1():
     dt2 = datetime.datetime(2017, 5, 29, 13, 10, 0)
     d1 = dt2 - dt1
     print('{0} - {1} = {2}'.format(dt2, dt1, d1))
+
 
 def practice1():
     date_1()

@@ -13,6 +13,7 @@ def exception1(option=0):
         print("finally block")
     print("after finally")
 
+
 def practice1():
     print("Case 1: exception does not happen")
     exception1(0)

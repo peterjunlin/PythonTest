@@ -1,11 +1,14 @@
 import json
 
+
 # used for practicing unittest
 def get_json_string(list1):
     return json.dumps(list1)
 
+
 def list_to_json_string(list1):
     print(json.dumps(list1))
+
 
 def json_file_write(filename, list1):
     f = None
@@ -16,12 +19,14 @@ def json_file_write(filename, list1):
         if f is None:
             f.close()
 
+
 def json_file_read(filename):
     f = open(filename, 'r')
     s = json.load(f)
     print(s)
     print(type(s))
     f.close()
+
 
 def practice1():
     filename = "./temp/test_json.txt"

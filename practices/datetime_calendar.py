@@ -1,5 +1,6 @@
 import calendar
 
+
 def calendar1():
     c = calendar.Calendar()
     # first day of weekday
@@ -48,6 +49,7 @@ def calendar1():
     #
     m = calendar.Calendar().monthdatescalendar(2017,5)
     print(len(m), m)
+
 
 def practice1():
     calendar1()

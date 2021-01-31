@@ -29,5 +29,6 @@ def bytes_basics():
     else:
         print('b1 is not empty')
 
+
 def practice1():
     bytes_basics()

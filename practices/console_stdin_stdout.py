@@ -1,8 +1,10 @@
 import sys
 
+
 def practice1():
     s1 = input("Waiting for your input:")
     print("Your input is: ", s1)
+
 
 def practice2():
     """ Count frequency of each line. 
@@ -18,3 +20,4 @@ def practice2():
             names[name] = 1
     for s1 in names.keys():
         print(s1, "->", names[s1])
+
