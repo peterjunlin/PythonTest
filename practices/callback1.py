@@ -10,5 +10,6 @@ def callback_1():
     r = [i for i in t]
     print(r)
 
+
 def practice_1():
     callback_1()

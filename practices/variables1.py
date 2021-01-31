@@ -1,11 +1,13 @@
 dict1 = None
 
+
 def show_vars():
     var1 = {'a': 10, 'b': 20}
     d1 = vars()
     print("vars(): ")
     arr1 = ['{0}:{1}'.format(x, y) for x, y in d1.items()]
     print("\n".join(arr1))
+
 
 def show_locals():
     local1 = {'a': 10, 'b': 20}
@@ -15,11 +17,13 @@ def show_locals():
     arr1 = ['{0}:{1}'.format(x, y) for x, y in d1.items()]
     print("\n".join(arr1))
 
+
 def show_globals():
     d1 = globals()
     print("globals(): ")
     print("\n".join(d1.keys()))
     # print(arr1)
+
 
 def variable_info():
     s1 = """line 1
@@ -33,6 +37,7 @@ def variable_info():
     print("\nprint(ascii(s1))")
     print(ascii(s1))
 
+
 def practice1():
     global dict1
     dict1 = {'a': 10, 'b': 20}  # this is global variable
@@ -42,6 +47,7 @@ def practice1():
     show_locals()
     show_globals()
     variable_info()
+
 
 def del_variable():
     a = 10
@@ -53,21 +59,23 @@ def del_variable():
     except UnboundLocalError:
         print("Exception of UnboundLocalError: local variable 'a' referenced before assignment")
 
+
 def practice2():
     # del_variable()
     d1 = dir(__builtins__)
     print(d1)
     print(len(d1))
 
+
 class A:
     x = 10
+
 
 def practice_equality():
     s1 = "abc"
     s2 = "abc"
     print('Compare two strings that has same value, s1 == s2  ', s1 == s2)  # True, compares the value
     print('Compare two strings that has same value, s1 is s2  ', s1 is s2)  # True, compares the memory address
-    print('Compare two strings that has same value, s1 is abc  ', s1 is 'abc')  # True, compares the memory address
     print(hex(id('abc')))
     print(hex(id(s1)))
     print(hex(id(s2)))

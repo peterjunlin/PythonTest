@@ -9,5 +9,6 @@ def set_functions():
     print(set2)
     print("type(set2)", type(set2))
 
+
 def practice1():
     set_functions()

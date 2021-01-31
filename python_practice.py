@@ -26,7 +26,9 @@ import practices.calendar1
 import practices.callback1
 import practices.list1
 import practices.unittest1
+import practices.statements
 import myModule
+
 
 def main():
     # practices.builtin.practice1()
@@ -60,13 +62,17 @@ def main():
     # practices.callback1.practice_1()
     # practices.list1.practice1()
     # practices.unittest1.practice1()
+    practices.statements.practice1()
+
     # unittest.main()
+
+    # unittest.main(module='practices.builtin', exit=False)
+    # unittest.main(module='practices.unittest1', exit=False)
+    # myModule.helloworld()
+
     pass
 
 
 if __name__ == "__main__":
-    # main()
-    unittest.main(module='practices.builtin', exit=False)
-    unittest.main(module='practices.unittest1', exit=False)
-    myModule.helloworld()
+    main()
 
