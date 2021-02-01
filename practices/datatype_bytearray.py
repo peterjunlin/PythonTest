@@ -1,79 +1,119 @@
-def bytearray_1():
-    # declare empty object
+def bytearray_initialization():
+    # declare empty bytearray
     b = bytearray()
-    print('b = bytearray()', type(b))
+    assert len(b) == 0
+
     # declare bytearray with size
-    b = bytearray(10)
-    print('b = bytearray(10)', b)
-    # declare source from string
+    b = bytearray(2)
+    assert b == bytearray(b'\00\00')
+
+    # declare from string with encoding
     b = bytearray('abc', 'utf-8')
-    print('bytearray(\'abc\', \'utf-8\')', b)
+    assert len(b) == 3
+    b = bytearray('abc你好', 'utf-8')
+    assert len(b) == 9
+
     # Copy from other objects
     b = bytearray([1, 2, 3, 4])
-    print('b = bytearray([1, 2, 3, 4])', b)
-    b = bytearray(b'abcdef')
-    print("b = bytearray(b'abcdef')",b)
-    c = b
-    print("c = b", c)
-    # Get length
-    print('len(b)', len(b))
-    # read
-    print('first element b[0] = ', b[0], chr(b[0]))
-    print('last element b[-1] = ', b[-1], chr(b[-1]))
-    try:
-        print(b[10])
-    except IndexError as e:
-        print('b[10] = ', e)
+    c = bytearray(b)
+    assert c == b
+    assert id(c) != id(b)
+
+
+def bytearray_properties():
+    # length
+    b = bytearray()
+    assert len(b) == 0
+
+    # type of bytearray
+    assert type(b) == bytearray
+
+
+def bytearray_operations():
+    b = bytearray(b'hello world')
+
+    # access element
+    assert b[0] == 104
+    assert b[-1] == 100
+
     # unpacking variables
-    t1, t2, t3, t4, t5, t6 = b
-    print('t1, t2, t3, t4, t5, t6 = b\n', t1, t2, t3, t4, t5, t6)
-    # max value
-    print('max(b)', max(b))
-    print('min(b)', min(b))
+    t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11 = b
+    assert t1 == 104
+    assert t11 == 100
+
+    # max, min value
+    assert max(b) == ord('w')
+    assert min(b) == ord(' ')
+
     # partial copy
-    c = b[1:5]
-    print('c = b[1:5]', c)
-    # conversion
+    c = b[2:5]
+    assert c == bytearray(b'llo')
+
+    # conversion - to string
     s = b.decode('utf-8')
-    print("To string: s = b.decode('utf-8')", s)
+    assert s == 'hello world'
+
+    # conversion - to list
     l1 = list(b)
-    print("To list: l1 = list(b)", l1)
+    assert l1 == [ord('h'), ord('e'), ord('l'), ord('l'), ord('o'), ord(' '),
+                  ord('w'), ord('o'), ord('r'), ord('l'), ord('d'), ]
+
     # iterator
     i = iter(b)
     t = i.__next__()
-    print('i.__next__()', t)
-    # loop
-    print('Loop in order')
-    for t in b:
-        print(t)
-    print('Loop in reverse order')
-    for t in reversed(b):
-        print(t)
-    # find value exists
-    if b'a' in b:
-        print('\'a\' in b')
-    else:
-        print('\'a\' not in b')
-    # find index of first occurrence
-    index1 = b.find(b'b')
-    print("index1 = b.find(b'b')", index1)
-    # find index of last occurrence
-    index1 = b.rfind(b'b')
-    print("index1 = b.rfind(b'b')", index1)
-    # count occurrence
-    print("b.count(b'b')", b.count(b'b'))
-    # change value
-    print(b)
-    b[0] = 98
-    print('b[0] = 98', b)
-    b[-1] = 98
-    print('b[-1] = 98', b)
-    # sort to a list
-    k = bytearray(b'cafdkl')
-    print("k = bytearray(b'cafdkl')\n sorted(k) = ", sorted(k))
-    # replace a slice
-    k[0:2] = b'ab'
-    print("k[0:2] = b'ab'", k)
+    assert t == ord('h')
 
-def practice1():
-    bytearray_1()
+    # loop
+    for t in b:
+        pass
+    assert t == ord('d')
+
+    # Loop in reverse order
+    for t in reversed(b):
+        pass
+    assert t == ord('h')
+
+    # find value exists
+    assert b'l' in b
+
+    # find index of first occurrence
+    assert b.find(b'h') == 0
+
+    # find index of last occurrence
+    assert b.rfind(b'd') == 10
+
+    # count occurrence
+    assert b.count(b'l') == 3
+
+    # change value
+    b[0] = ord('H')
+    assert b[0] == ord('H')
+
+    # replace a slice
+    print(b)
+    b[6:11] = b'Peter'  # note: the upper bound is exclusive
+    assert b == bytearray(b'Hello Peter')
+
+    # sort to a list
+    list1 = sorted(b)
+    assert list1 == [32, 72, 80, 101, 101, 101, 108, 108, 111, 114, 116]
+
+
+def bytearray_error_handling():
+    b = bytearray(b'hello world')
+
+    # IndexError
+    handled = False
+    try:
+        print(b[100])
+        assert False  # this will not be reached.
+    except IndexError as e:
+        handled = True
+    assert handled is True
+
+
+if __name__ == "__main__":
+    bytearray_initialization()
+    bytearray_properties()
+    bytearray_operations()
+    bytearray_error_handling()

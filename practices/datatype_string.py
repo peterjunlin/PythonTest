@@ -1,6 +1,14 @@
 import sys
 
 
+def string_literal():
+    s = b'abc'  # ASCII
+    s = u'abc'  # UTF
+    s = r'abc'  # raw
+    s = rb'abc'
+    # s = ru'abc'  # this is not supported
+
+
 def string_functions():
     s1 = '  abc '
     s2 = 'hello'
