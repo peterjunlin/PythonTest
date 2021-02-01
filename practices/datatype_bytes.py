@@ -1,34 +1,42 @@
-def bytes_basics():
+def bytes_initialization():
     # declare empty object
     b1 = bytes()
-    print('b1 = bytes()\n', b1)
+    assert len(b1) == 0
+
     # declare with size
     b2 = bytes(10)
-    print('b2 = bytes(10)\n', b2)
-    # declare bytes from other type
+    assert len(b2) == 10
+
+    # initialized with generator
     b3 = bytes(range(10, 20, 2))
-    print('b3 = bytes(range(10, 20, 2))\n', b3)
+    assert len(b3) == 5
+
+
+def bytes_operations():
+    b = bytes(range(0, 10, 1))
 
     # slice
-    b4 = b3[0:3]
-    print('b4 = b3[0:3]\n', b4)
-    b5 = b3[-3:]
-    print('b5 = b3[-3:]\n', b5)
+    d = b[0:3]
+    assert d == bytes(b'\x00\x01\x02')
+    d = b[-3:]
+    assert d == bytes(b'\x07\x08\x09')
+
     # assignment
-    b6 = b3
-    print('b6 = b3\n', b6)
-    # get value
+    d = b
+    assert id(d) == id(b)
+
+
+def bytes_error_handling():
+    b = bytes(range(0, 10, 2))
+    handled = False
     try:
-        a = b1[10]
+        a = b[10]
     except IndexError as e:
-        print('a = b1[10]', e)
-
-    # judge empty bytes
-    if (len(b1)==0):
-        print('b1 is empty')
-    else:
-        print('b1 is not empty')
+        handled = True
+    assert handled
 
 
-def practice1():
-    bytes_basics()
+if __name__ == "__main__":
+    bytes_initialization()
+    bytes_operations()
+    bytes_error_handling()
