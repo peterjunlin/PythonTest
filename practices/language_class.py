@@ -17,40 +17,51 @@ class Shape:
     def method2(self):
         print('In instance method, self.member1', self.member1)  # access instance-member variable
 
-    print("This line is at the end of class definition. "
-          "This line will run too, without need to create an instance.")
+    print("This line run whenever the module loaded, no need to create an instance to run.")
 
 
 class Polygon(Shape):
     print("Polygon class loading.")
-    _abc_ = 0
-    __def = 0
 
     def __init__(self):
-        self.x = 0
-        print(dir())
+        self.x = 0  # Create and set member variable.
+        Shape.__init__(self)
 
-    def func1(self):
+    def to_set_member_variable(self):
         self.x = 1
-        print('In func1()')
 
-    def func2(self):
-        x = 2
-        self.func1()
+    def to_call_member_function(self):
+        self.to_set_member_variable()
 
-    def func3(self):
-        print(dir(self))  # this can display the mingled double underscore name _A__def
+    def to_set_inherited_member_variable(self):
+        self.member1 = 567890
 
 
 if __name__ == "__main__":
     print("After this line, create an instance of Shape class.")
-    e = Shape()
-    p = Polygon()
+    shape1 = Shape()
+    polygon1 = Polygon()
 
     # print(type(e))
     # print(isinstance(e, Shape))
     Shape.method1()  # access class-member
-    e.member1 = 20  # access instance-member variable
-    e.method1()
-    e.method2()
+    shape1.member1 = 20  # access instance-member variable
+    shape1.method1()
+    shape1.method2()
+
+    print("\nPolygon inherited from Shape.")
+    polygon1.member1 = 1234
+    polygon1.method1()
+    polygon1.method2()
+
+    # Set member variable.
+    polygon1.to_set_member_variable()
+    print(polygon1.x)
+
+    # Inherited instance member variable.
+    polygon1.to_set_inherited_member_variable()
+    print(polygon1.member1)
+
+    # Inherited class member variable.
+    print(Polygon.member1)
 
