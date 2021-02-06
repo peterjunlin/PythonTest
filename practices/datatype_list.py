@@ -1,23 +1,20 @@
 def list_operations():
-    # reverse
     list1 = [1, 2, 3, 4]
+
+    # reverse
     list2 = [i for i in reversed(list1)]
-    print("{0} reversed: {1}".format(list1, list2))
 
     # reindexing
-    print("list1[1] value before deleting: {0}".format(list1[1]))
     del list1[1]
-    print("list1[1] value after deleting: {0}".format(list1[1]))
+    assert list1 == [1, 3, 4]
 
     # Expanding immutables
-    list2 = [1, 2, 3] * 3
-    print(list2)
+    list2 = [1, 2, 3] * 2
+    assert list2 == [1, 2, 3, 1, 2, 3]
 
-    # Expanding referenced mutables
-    list2 = [list1, list1, list1] * 3
-    print(list2)
-    list1[0] = 0
-    print(list2)
+    # filter
+    list2 = list(filter(lambda item: item > 2, list1))
+    assert list2 == [3, 4]
 
 
 def list_comprehension():
