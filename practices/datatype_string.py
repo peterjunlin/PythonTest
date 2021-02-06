@@ -9,19 +9,54 @@ def string_literal():
     # s = ru'abc'  # this is not supported
 
 
+def string_literal_sharing():
+    s = "abcdefg"
+    b = s
+    c = "abcdefg"
+    d = "abcde"
+    d = d + "fg"
+
+    assert id(b) == id(s)  # string literal is shared, since the content is the same.
+    assert id(c) == id(s)  # string literal is shared, since the content is the same.
+
+    assert d == s
+    assert id(d) != id(s)  # the calculated value is not treated as constant value.
+
+    assert id(s[1:3]) == id(s[1:4])  # slice is a reference
+
+    s1 = s[1:3]  # copy assignment
+    s2 = s[1:4]  # copy assignment
+    assert id(s1) != id(s2)
+
+
 def string_functions():
     s1 = '  abc '
     s2 = 'hello'
-    print("s1 = '", s1,"'")
-    print("s1.strip() = '", s1.strip(), "'")
-    print("s2.capitalize() = '", s2.capitalize(), "'")
-    print("s1.find('a') = '", s1.find('a'),"'")
-    it = reversed(s1)
-    print(type(it))
+
+    # Remove white space at the both ends.
+    assert s1.strip() == "abc"
+
+    # Capitalize first letter.
+    assert s2.capitalize() == "Hello"
+
+    # Find index of first occurrence
+    assert s1.find('a') == 2
+
+    # reverse
+    s3 = ''.join(reversed(s2))
+    assert s3 == "olleh"
+    s3 = s2[::-1]
+    assert s3 == "olleh"
+
+    # Iteration
+    it = reversed(s2)
+    s4 = ''
     for i in it:
-        # sys.stdout.write(i)
-        print(i)
+        s4 = s4 + i
+    assert s4 == "olleh"
 
 
-def practice1():
+if __name__ == "__main__":
+    string_literal()
+    string_literal_sharing()
     string_functions()
