@@ -13,7 +13,7 @@ def list_operations():
     list2 = [i for i in reversed(list1)]
     assert list2 == [4, 3, 2, 1]
 
-    # reindexing
+    # delete and reindexing
     del list1[1]
     assert list1 == [1, 3, 4]
 
