@@ -1,12 +1,26 @@
+"""Note: string is immutable."""
+
 import sys
 
 
 def string_literal():
     s = b'abc'  # ASCII
     s = u'abc'  # UTF
-    s = r'abc'  # raw
+
+    s = r'abc\n'  # raw
+    assert s == 'abc\\n'
+
     s = rb'abc'
     # s = ru'abc'  # this is not supported
+
+    # Concatenation
+    s = 'abc' 'def'
+    assert s == 'abcdef'
+
+
+def string_escape():
+    s = 'abc\n'
+    s = 'abc\'def\''
 
 
 def string_literal_sharing():
@@ -58,5 +72,6 @@ def string_functions():
 
 if __name__ == "__main__":
     string_literal()
+    string_escape()
     string_literal_sharing()
     string_functions()
