@@ -1,3 +1,6 @@
+"""bytes is immutable"""
+
+
 def bytes_initialization():
     # declare empty object
     b1 = bytes()
@@ -11,15 +14,18 @@ def bytes_initialization():
     b3 = bytes(range(10, 20, 2))
     assert len(b3) == 5
 
+    b4 = b'hello world'
+    assert type(b4) == bytes
+
 
 def bytes_operations():
     b = bytes(range(0, 10, 1))
 
     # slice
     d = b[0:3]
-    assert d == bytes(b'\x00\x01\x02')
+    assert d == b'\x00\x01\x02'
     d = b[-3:]
-    assert d == bytes(b'\x07\x08\x09')
+    assert d == b'\x07\x08\x09'
 
     # assignment
     d = b

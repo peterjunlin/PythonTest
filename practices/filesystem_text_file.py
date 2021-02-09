@@ -29,21 +29,10 @@ def file_attributes(filename):
     f.close()
 
 
-def path_1(filename):
-    print('------ path')
-    print('os.path.realpath("{0}") = {1}'.format(filename, os.path.realpath(filename)))
-    print('os.path.splitext("{0}") = {1}'.format(filename, os.path.splitext(filename)))
-    print('os.path.abspath("{0}") = {1}'.format(filename, os.path.abspath(filename)))
-    print('Current working directory: {0}'.format(os.getcwd()))
-    print('Current working directory: {0}'.format(os.curdir))
-    print(os.path.split(filename))
-    print(os.path.split(os.path.splitext(filename)[0])[1])
-
-
 def practice1():
     filename = './temp/test.txt'
     write_text_file(filename)
     read_and_display_text_file(filename)
     file_attributes(filename)
-    path_1(filename)
+
 

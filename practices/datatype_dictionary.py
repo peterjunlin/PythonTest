@@ -13,11 +13,10 @@ def dict_initialization():
 
 
 def dict_properties():
-    dict1 = dict(one=1)
     d = dict(a=1, b=2, c=3, d=4, e=5)
 
     # Get type of dictionary
-    assert type(dict1) == dict
+    assert type(d) == dict
 
 
 def dict_operations():

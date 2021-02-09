@@ -1,3 +1,6 @@
+"""bytearray is mutable."""
+
+
 def bytearray_initialization():
     # declare empty bytearray
     b = bytearray()

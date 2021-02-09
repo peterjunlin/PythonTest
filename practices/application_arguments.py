@@ -30,6 +30,7 @@ def parse_arguments():
         s = ['--sum', '7', '-1', '42']
         p = vars(parser.parse_args(s))
         x = p['accumulate'](p['integers'])
+        print(p)
         assert x == 48
 
 

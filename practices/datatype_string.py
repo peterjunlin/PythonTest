@@ -4,14 +4,11 @@ import sys
 
 
 def string_literal():
-    s = b'abc'  # ASCII
     s = u'abc'  # UTF
+    assert type(s) == str
 
     s = r'abc\n'  # raw
     assert s == 'abc\\n'
-
-    s = rb'abc'
-    # s = ru'abc'  # this is not supported
 
     # Concatenation
     s = 'abc' 'def'

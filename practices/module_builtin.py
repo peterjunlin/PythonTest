@@ -1,8 +1,8 @@
-import unittest
+def builtins_names():
+    list1 = dir('__builtins__')
+    print(len(list1))
+    print(list1)
 
 
-class TestBuiltin(unittest.TestCase):
-    def test_abs(self):
-        x = -0.1
-        print(abs(x) == 0.1)
-
+if __name__ == '__main__':
+    builtins_names()
