@@ -69,6 +69,12 @@ def string_functions():
         s4 = s4 + i
     assert s4 == "olleh"
 
+    # Concatenation
+    sep = '/'
+    d = ['2020', '1', '1']
+    k = sep.join(d)
+    assert k == '2020/1/1'
+
 
 if __name__ == "__main__":
     string_literal()
