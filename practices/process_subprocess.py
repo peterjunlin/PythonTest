@@ -2,22 +2,21 @@ import subprocess
 
 
 def test_shell_command():
-    a = subprocess.run("ls", shell=True, stdout = subprocess.PIPE)
-    # print(a)
-    # print(type(a))
-    print(a.stdout.decode())
+    a = subprocess.run(["ls", "-l"])
+    print(a)
 
 
 def test_subprocess():
-    subprocess.run(['notepad', r'c:\temp\test.txt'])
-    print('return from testSubprocess')
+    a = subprocess.run(['open -a textedit', r'test.txt'], shell=True)
+    print(a)
 
 
 def test_call_script():
-    subprocess.run("test2.py", shell=True)
+    a = subprocess.run("python -m test.py", shell=True, stdout=subprocess.PIPE)
+    print(a)
 
 
 if __name__ == '__main__':
-    # test_shell_command()
-    test_subprocess()
+    test_shell_command()
+    # test_subprocess()
     # test_call_script()
