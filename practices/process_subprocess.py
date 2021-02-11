@@ -17,6 +17,7 @@ def test_call_script():
     subprocess.run("test2.py", shell=True)
 
 
-# test_shell_command()
-# test_subprocess()
-# test_call_script()
+if __name__ == '__main__':
+    # test_shell_command()
+    test_subprocess()
+    # test_call_script()
