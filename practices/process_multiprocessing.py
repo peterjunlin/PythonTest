@@ -19,7 +19,7 @@ def f(x):
 
 def process_multiprocessing():
     with Pool(os.cpu_count()) as p:
-        r = p.map(f, [x for x in range(0, 100)])
+        r = p.map(f, [x for x in range(0, 100000)])
         print(r)
 
 
