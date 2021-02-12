@@ -2,7 +2,7 @@
 
 Python version: 3.9
 
-Py file name consists of two parts - "category_feature.py". For example, "datatype_bytearray.py" is about bytearray of datatype.
+Py filename consists of two parts - "category_feature.py". For example, "datatype_bytearray.py" is about bytearray of datatype.
 
 Each practice file can be executed independently.
 

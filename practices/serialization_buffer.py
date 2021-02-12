@@ -1,14 +1,15 @@
 import struct
 
 
-def pack_struct():
-    b = pack(1, 2, 3)
+def struct_pack_and_unpack():
+    # pack
+    buffer = struct.pack('hhl', 1, 2, 3)  # short, short, long
+    assert buffer == b'\x01\x00\x02\x00\x00\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00'
 
-
-def unpack_struct():
-    pass
+    # unpack
+    a, b, c = struct.unpack('hhl', buffer)
+    assert (a, b, c) == (1, 2, 3)
 
 
 if __name__ == '__main__':
-    pack_struct()
-    unpack_struct()
+    struct_pack_and_unpack()
