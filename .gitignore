@@ -142,3 +142,7 @@ cython_debug/
 
 # testing data
 practices/temp
+
+#IDE
+.idea/
+
