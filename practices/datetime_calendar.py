@@ -51,5 +51,5 @@ def calendar1():
     print(len(m), m)
 
 
-def practice1():
+if __name__ == '__main__':
     calendar1()

@@ -27,8 +27,8 @@ def string_literal_sharing():
     d = "abcde"
     d = d + "fg"
 
-    assert id(b) == id(s)  # string literal is shared, since the content is the same.
-    assert id(c) == id(s)  # string literal is shared, since the content is the same.
+    assert id(b) == id(s)  # string literal is shared, since the content is the same and immutable.
+    assert id(c) == id(s)  # string literal is shared, since the content is the same and immutable.
 
     assert d == s
     assert id(d) != id(s)  # the calculated value is not treated as constant value.

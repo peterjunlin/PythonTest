@@ -32,7 +32,7 @@ def list_editing():
     assert list2 == [5, 9, 4, 1, 2, 3]
     assert k == 5
 
-    list2.reverse()
+    list2.reverse()  # in place
     assert list2 == [3, 2, 1, 4, 9, 5]
 
     list3 = list2.copy()

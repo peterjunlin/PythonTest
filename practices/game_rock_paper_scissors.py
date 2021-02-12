@@ -4,7 +4,10 @@ from random import randint
 def play_game():
     value_names = ["rock", "paper", "scissors"]
 
+    # computer's hand
     computer = randint(0, 2)
+
+    # user's hand
     s = input("0-rock, 1-paper, 2-scissors")
     if s.isnumeric():
         player = int(s)
@@ -12,6 +15,7 @@ def play_game():
         print("Input is not valid.")
         return;
 
+    # who won
     if computer == player:
         print("tie")
     elif (computer == 0 and player == 1) \
@@ -22,4 +26,5 @@ def play_game():
         print("Computer won.", value_names[computer], value_names[player])
 
 
-play_game()
+if __name__ == '__main__':
+    play_game()

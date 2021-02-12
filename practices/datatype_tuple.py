@@ -6,8 +6,11 @@ def tuple_initialization():
     assert len(t) == 3
 
     t = tuple([[1, 2], [23, 14], [21, 20]])  # tuple that contains mutable objects.
+    t1 = t
+    assert id(t) == id(t1)
     t[0].append(5)
     assert t[0] == [1, 2, 5]
+    assert id(t) == id(t1)
 
 
 def tuple_comprehension():
