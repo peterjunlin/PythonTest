@@ -31,7 +31,8 @@ def script_file_path():
     print(__file__)
 
 
-test_builtins()
-test_environment_variable()
-python_version()
-script_file_path()
+if __name__ == '__main__':
+    test_builtins()
+    test_environment_variable()
+    python_version()
+    script_file_path()

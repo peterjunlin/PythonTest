@@ -8,5 +8,5 @@ def predefined_constants():
     print("__debug__ = ", __debug__)
 
 
-def practice1():
+if __name__ == '__main__':
     predefined_constants()

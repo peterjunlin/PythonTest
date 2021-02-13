@@ -43,3 +43,7 @@ class TestCase2(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         print("tearDownClass2")
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -1,3 +1,6 @@
+"""Sequence of try/except/else/finally"""
+
+
 def exception1(option=0):
     try:
         print("try block")
@@ -6,15 +9,15 @@ def exception1(option=0):
         elif option == 2:
             raise IOError
     except TypeError:
-        print("Caught TypeError")
+        print("Caught TypeError.")
     else:
-        print("else block")
+        print("Else block. This is only reached if no exception happens.")
     finally:
-        print("finally block")
-    print("after finally")
+        print("Finally block. This is always reached no matter what happens.")
+    print("After finally. This won't be reached if exception isn't caught.")
 
 
-def practice1():
+if __name__ == '__main__':
     print("Case 1: exception does not happen")
     exception1(0)
     print()
@@ -22,4 +25,4 @@ def practice1():
     exception1(1)
     print()
     print("Case 3: exception happened and was not caught")
-    # exception1(2)
+    exception1(2)
