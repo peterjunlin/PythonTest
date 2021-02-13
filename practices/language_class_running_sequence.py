@@ -1,30 +1,28 @@
+"""Sequence of class running."""
+
+
 class Shape:
-    """
-    Find the executing sequence of each section of module and class.
-    Find how to use class member variable in and out of class method and instance method.
-    """
-    member1 = 10
-    print("This line is at the beginning of class definition, it will run when importing.")
-    print("Only run once and this won't run in derived classes.")
+    print("Only run once as the class is imported, this won't run in derived classes, neither in instance.")
 
     def __init__(self):
         print("Constructor")
 
     @classmethod
     def method1(cls):
-        print('In class method, cls.member1 = ', cls.member1)  # access class-member variable
+        print('Class method, cls.member1 = ', cls.member1)  # access class-member variable
 
     def method2(self):
-        print('In instance method, self.member1', self.member1)  # access instance-member variable
+        print('Instance method, self.member1', self.member1)  # access instance-member variable
 
-    print("This line run whenever the module loaded, no need to create an instance to run.")
+    print("Only run once as the class is imported, this won't run in derived classes, neither in instance.")
 
 
 class Polygon(Shape):
-    print("Polygon class loading.")
+    print("Polygon class is loading.")
 
     def __init__(self):
         self.x = 0  # Create and set member variable.
+        self.member1 = 0
         Shape.__init__(self)
 
     def to_set_member_variable(self):
