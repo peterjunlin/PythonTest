@@ -29,6 +29,6 @@ def key_value_assignment():
         print("{},{},{}".format(i, k, v))
 
 
-def practice1():
+if __name__ == '__main__':
     multi_assignment1()
     key_value_assignment()

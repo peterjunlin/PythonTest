@@ -2,7 +2,7 @@ import sys
 
 
 def optional_list_arguments(a, lst=[]):
-    # Mutable optional default value is initialized once and shared in global scope.
+    # Mutable optional default value is initialized once and shared globally.
     lst.append(a)
     return lst
 
